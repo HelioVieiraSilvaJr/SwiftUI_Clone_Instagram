@@ -18,6 +18,10 @@
 		BDDE6B2728D22EF300784B36 /* UploadPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE6B2628D22EF300784B36 /* UploadPostView.swift */; };
 		BDDE6B2928D22F0900784B36 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE6B2828D22F0900784B36 /* NotificationsView.swift */; };
 		BDDE6B2B28D3CA2C00784B36 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE6B2A28D3CA2C00784B36 /* FeedCell.swift */; };
+		BDDE6B2D28D3DB6200784B36 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE6B2C28D3DB6100784B36 /* SearchBar.swift */; };
+		BDDE6B2F28D4179700784B36 /* PostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE6B2E28D4179600784B36 /* PostGridView.swift */; };
+		BDDE6B3128D4190B00784B36 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE6B3028D4190B00784B36 /* UserListView.swift */; };
+		BDDE6B3328D4191400784B36 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE6B3228D4191400784B36 /* UserCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		BDDE6B2628D22EF300784B36 /* UploadPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostView.swift; sourceTree = "<group>"; };
 		BDDE6B2828D22F0900784B36 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		BDDE6B2A28D3CA2C00784B36 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		BDDE6B2C28D3DB6100784B36 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		BDDE6B2E28D4179600784B36 /* PostGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridView.swift; sourceTree = "<group>"; };
+		BDDE6B3028D4190B00784B36 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
+		BDDE6B3228D4191400784B36 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				BDDE6B1F28D22E9200784B36 /* SearchView.swift */,
+				BDDE6B2C28D3DB6100784B36 /* SearchBar.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -200,6 +209,9 @@
 		BDDE6B1628D22D3000784B36 /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				BDDE6B2E28D4179600784B36 /* PostGridView.swift */,
+				BDDE6B3028D4190B00784B36 /* UserListView.swift */,
+				BDDE6B3228D4191400784B36 /* UserCell.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -303,12 +315,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDDE6B2028D22E9200784B36 /* SearchView.swift in Sources */,
+				BDDE6B3328D4191400784B36 /* UserCell.swift in Sources */,
 				BDDE6B1E28D22E7700784B36 /* FeedView.swift in Sources */,
+				BDDE6B2F28D4179700784B36 /* PostGridView.swift in Sources */,
 				BDDE6AFA28D22B9C00784B36 /* InstagramSwiftUIApp.swift in Sources */,
 				BDDE6B0E28D22CEB00784B36 /* ContentView.swift in Sources */,
 				BDDE6B2728D22EF300784B36 /* UploadPostView.swift in Sources */,
 				BDDE6B2328D22EAA00784B36 /* ProfileView.swift in Sources */,
+				BDDE6B3128D4190B00784B36 /* UserListView.swift in Sources */,
 				BDDE6B1C28D22E3C00784B36 /* MainTabView.swift in Sources */,
+				BDDE6B2D28D3DB6200784B36 /* SearchBar.swift in Sources */,
 				BDDE6B2928D22F0900784B36 /* NotificationsView.swift in Sources */,
 				BDDE6B2B28D3CA2C00784B36 /* FeedCell.swift in Sources */,
 			);
