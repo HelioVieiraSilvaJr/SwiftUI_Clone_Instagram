@@ -26,6 +26,7 @@
 		BDDE6B3128D4190B00784B36 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE6B3028D4190B00784B36 /* UserListView.swift */; };
 		BDDE6B3328D4191400784B36 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE6B3228D4191400784B36 /* UserCell.swift */; };
 		BDDE6B3528D4C20900784B36 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE6B3428D4C20800784B36 /* NotificationCell.swift */; };
+		BDDE768B28D649DC0054528F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE768A28D649DC0054528F /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		BDDE6B3028D4190B00784B36 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		BDDE6B3228D4191400784B36 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		BDDE6B3428D4C20800784B36 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		BDDE768A28D649DC0054528F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		BDDE6B0828D22C7F00784B36 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BDDE768A28D649DC0054528F /* ImagePicker.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				BDDE6B2028D22E9200784B36 /* SearchView.swift in Sources */,
 				BDDE6B3328D4191400784B36 /* UserCell.swift in Sources */,
 				BDDE6B1E28D22E7700784B36 /* FeedView.swift in Sources */,
+				BDDE768B28D649DC0054528F /* ImagePicker.swift in Sources */,
 				BD1A4A2E28D4D14400ED8647 /* ProfileActionButtonView.swift in Sources */,
 				BD1A4A2C28D4CD7A00ED8647 /* UserStatView.swift in Sources */,
 				BDDE6B2F28D4179700784B36 /* PostGridView.swift in Sources */,
