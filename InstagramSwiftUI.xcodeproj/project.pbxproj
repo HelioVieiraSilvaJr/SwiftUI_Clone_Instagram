@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD1968B628D7BEDA00E9DBD5 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1968B528D7BEDA00E9DBD5 /* SignUpView.swift */; };
 		BD1A4A2C28D4CD7A00ED8647 /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A4A2B28D4CD7A00ED8647 /* UserStatView.swift */; };
 		BD1A4A2E28D4D14400ED8647 /* ProfileActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A4A2D28D4D14300ED8647 /* ProfileActionButtonView.swift */; };
 		BD67086E28D4C8FD00788821 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD67086D28D4C8FD00788821 /* ProfileHeaderView.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD1968B528D7BEDA00E9DBD5 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		BD1A4A2B28D4CD7A00ED8647 /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
 		BD1A4A2D28D4D14300ED8647 /* ProfileActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionButtonView.swift; sourceTree = "<group>"; };
 		BD67086D28D4C8FD00788821 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				BDDE768C28D6C9120054528F /* SignInView.swift */,
+				BD1968B528D7BEDA00E9DBD5 /* SignUpView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				BD67086E28D4C8FD00788821 /* ProfileHeaderView.swift in Sources */,
 				BDDE6B2728D22EF300784B36 /* UploadPostView.swift in Sources */,
 				BDDE6B2328D22EAA00784B36 /* ProfileView.swift in Sources */,
+				BD1968B628D7BEDA00E9DBD5 /* SignUpView.swift in Sources */,
 				BDDE6B3128D4190B00784B36 /* UserListView.swift in Sources */,
 				BDDE6B1C28D22E3C00784B36 /* MainTabView.swift in Sources */,
 				BDDE6B2D28D3DB6200784B36 /* SearchBar.swift in Sources */,
