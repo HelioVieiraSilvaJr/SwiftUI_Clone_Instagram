@@ -31,7 +31,12 @@ struct MainTabView: View {
                         Image(systemName: "heart")
                     }
                 
-                ProfileView()
+//                ProfileView()
+//                    .tabItem {
+//                        Image(systemName: "person")
+//                    }
+                
+                SignInView()
                     .tabItem {
                         Image(systemName: "person")
                     }
