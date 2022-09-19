@@ -17,7 +17,7 @@ struct InstagramSwiftUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(AuthViewModel.shared)
+            ContentView().environmentObject(SessionManager.shared)
         }
     }
 }

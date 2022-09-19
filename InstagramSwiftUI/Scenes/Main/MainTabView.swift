@@ -45,7 +45,7 @@ struct MainTabView: View {
     
     var buttonLogout: some View {
         Button {
-            AuthViewModel.shared.logout()
+            SessionManager.shared.logout()
         } label: {
             Text("Sair").foregroundColor(.black)
         }

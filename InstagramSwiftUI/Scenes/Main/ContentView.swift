@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var sessionManager: SessionManager
     
     var body: some View {
         Group {
-            if viewModel.userSession == nil {
+            if sessionManager.userSession == nil {
                 SignInView()
             }
             else {

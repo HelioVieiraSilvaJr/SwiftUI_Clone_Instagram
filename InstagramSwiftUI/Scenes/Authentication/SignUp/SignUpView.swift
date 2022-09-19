@@ -17,7 +17,11 @@ struct SignUpView: View {
     @State var imagePickerPresented = false
     @State private var showingOptions = false
     @Environment(\.presentationMode) var mode
-    @EnvironmentObject var viewModel: AuthViewModel
+    var viewModel: SignUpViewModel
+    
+    init() {
+        viewModel = SignUpViewModel()
+    }
     
     var body: some View {
         ZStack {

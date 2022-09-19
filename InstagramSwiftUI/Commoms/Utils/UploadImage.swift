@@ -10,7 +10,7 @@ import FirebaseStorage
 
 class UploadImage {
     
-    static func image(_ image: UIImage, completion: @escaping (String) -> Void) {
+    static func profile(_ image: UIImage, completion: @escaping (String) -> Void) {
         guard let imageData = image.jpegData(compressionQuality: 0.5) else { return }
         let filename = NSUUID().uuidString
         let ref = Storage.storage().reference(withPath: "/profile_images/\(filename)")

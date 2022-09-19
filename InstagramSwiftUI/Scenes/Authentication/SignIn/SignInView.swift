@@ -10,7 +10,11 @@ import SwiftUI
 struct SignInView: View {
     @State var email = ""
     @State var password = ""
-    @EnvironmentObject var viewModel: AuthViewModel
+    var viewModel: SignInViewModel
+    
+    init() {
+        viewModel = SignInViewModel()
+    }
     
     var body: some View {
         NavigationView {
