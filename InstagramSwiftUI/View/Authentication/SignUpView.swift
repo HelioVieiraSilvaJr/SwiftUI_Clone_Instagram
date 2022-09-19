@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct SignUpView: View {
-    @State var textFieldEmail = ""
-    @State var textFieldUsername = ""
-    @State var textFieldFullname = ""
-    @State var textFieldPassword = ""
+    @State var email = ""
+    @State var username = ""
+    @State var fullname = ""
+    @State var password = ""
     @State private var selectedImage: UIImage?
     @State var image: Image?
     @State var imagePickerPresented = false
     @State private var showingOptions = false
     @Environment(\.presentationMode) var mode
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         ZStack {
@@ -67,27 +68,36 @@ struct SignUpView: View {
                 .padding()
                 
                 VStack(spacing: 20) {
-                    CustomTextField(text: $textFieldEmail,
+                    CustomTextField(text: $email,
                                     placeholder: "E-mail",
                                     imageName: "envelope",
                                     keyboardType: .emailAddress)
                     
-                    CustomTextField(text: $textFieldEmail,
+                    CustomTextField(text: $username,
                                     placeholder: "Usuário",
                                     imageName: "person",
                                     keyboardType: .default)
                     
-                    CustomTextField(text: $textFieldEmail,
+                    CustomTextField(text: $fullname,
                                     placeholder: "Nome completo",
                                     imageName: "person",
                                     keyboardType: .default)
                     
-                    CustomSecureField(text: $textFieldPassword, placeholder: "Senha")
+                    CustomSecureField(text: $password, placeholder: "Senha")
                 }
                 .padding(.horizontal, 32)
                 
                 Button {
+                    guard let image = selectedImage else {
+                        print("ERROR: Imagem do perfil esta vazia.")
+                        return
+                    }
                     
+                    viewModel.signup(withEmail: email.lowercased(),
+                                     password: password,
+                                     image: image,
+                                     username: username,
+                                     fullname: fullname)
                 } label: {
                     Text("Criar")
                         .font(.headline)

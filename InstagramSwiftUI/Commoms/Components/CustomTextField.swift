@@ -36,6 +36,7 @@ struct CustomTextField: View {
                     .foregroundColor(.white)
                     .accentColor(.white)
                     .keyboardType(keyboardType)
+                    .disableAutocorrection(true)
             }
             .padding(.vertical, 8)
             .padding(.horizontal, 8)

@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct SignInView: View {
-    @State var textFieldEmail = ""
-    @State var textFieldPassword = ""
+    @State var email = ""
+    @State var password = ""
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         NavigationView {
@@ -29,12 +30,13 @@ struct SignInView: View {
                     }
                     
                     VStack(spacing: 20) {
-                        CustomTextField(text: $textFieldEmail,
-                                            placeholder: "E-mail",
-                                            imageName: "envelope",
+                        CustomTextField(text: $email,
+                                        placeholder: "E-mail",
+                                        imageName: "envelope",
                                         keyboardType: .emailAddress)
                         
-                        CustomSecureField(text: $textFieldPassword, placeholder: "Senha")
+                        CustomSecureField(text: $password,
+                                          placeholder: "Senha")
                     }
                     .padding(.horizontal, 32)
                     
@@ -53,7 +55,8 @@ struct SignInView: View {
                     }
 
                     Button {
-
+                        viewModel.signin(withEmail: email.lowercased(),
+                                         password: password)
                     } label: {
                         Text("Entrar")
                             .font(.headline)

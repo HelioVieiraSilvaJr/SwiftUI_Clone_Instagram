@@ -36,10 +36,20 @@ struct MainTabView: View {
                         Image(systemName: "person")
                     }
             }
-            .accentColor(.black)
             .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(leading: buttonLogout)
+            .accentColor(.black)
         }
+    }
+    
+    var buttonLogout: some View {
+        Button {
+            AuthViewModel.shared.logout()
+        } label: {
+            Text("Sair").foregroundColor(.black)
+        }
+
     }
 }
 
