@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @ObservedObject var sessionManager = SessionManager.shared
+    
     var body: some View {
         NavigationView {
             TabView {
@@ -31,10 +33,12 @@ struct MainTabView: View {
                         Image(systemName: "heart")
                     }
                 
-                ProfileView()
-                    .tabItem {
-                        Image(systemName: "person")
-                    }
+                if let user = sessionManager.currentUser {
+                    ProfileView(user: user)
+                        .tabItem {
+                            Image(systemName: "person")
+                        }
+                }
             }
             .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.inline)

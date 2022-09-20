@@ -28,6 +28,8 @@
 		BDD960E628D8A32500A31C0C /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD960E528D8A32500A31C0C /* SearchRepository.swift */; };
 		BDD960E928D90F3300A31C0C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BDD960E828D90F3300A31C0C /* FirebaseFirestoreSwift */; };
 		BDD960EC28D94E4C00A31C0C /* JSONDecoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD960EB28D94E4C00A31C0C /* JSONDecoder+Extension.swift */; };
+		BDD960EE28DA119200A31C0C /* StorageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD960ED28DA119100A31C0C /* StorageModels.swift */; };
+		BDD960F028DA36A300A31C0C /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD960EF28DA36A300A31C0C /* KeyChain.swift */; };
 		BDDE6AFA28D22B9C00784B36 /* InstagramSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE6AF928D22B9C00784B36 /* InstagramSwiftUIApp.swift */; };
 		BDDE6AFE28D22BA000784B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDDE6AFD28D22BA000784B36 /* Assets.xcassets */; };
 		BDDE6B0128D22BA000784B36 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDDE6B0028D22BA000784B36 /* Preview Assets.xcassets */; };
@@ -64,6 +66,8 @@
 		BDD960E328D8A2A000A31C0C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		BDD960E528D8A32500A31C0C /* SearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepository.swift; sourceTree = "<group>"; };
 		BDD960EB28D94E4C00A31C0C /* JSONDecoder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extension.swift"; sourceTree = "<group>"; };
+		BDD960ED28DA119100A31C0C /* StorageModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageModels.swift; sourceTree = "<group>"; };
+		BDD960EF28DA36A300A31C0C /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		BDDE6AF628D22B9C00784B36 /* InstagramSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDDE6AF928D22B9C00784B36 /* InstagramSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramSwiftUIApp.swift; sourceTree = "<group>"; };
 		BDDE6AFD28D22BA000784B36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,7 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				BDDE768C28D6C9120054528F /* SignInView.swift */,
-				BDD960DC28D8956B00A31C0C /* SignUpViewModel.swift */,
+				BDD960DA28D894CC00A31C0C /* SignInViewModel.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -137,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				BD1968B528D7BEDA00E9DBD5 /* SignUpView.swift */,
-				BDD960DA28D894CC00A31C0C /* SignInViewModel.swift */,
+				BDD960DC28D8956B00A31C0C /* SignUpViewModel.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -224,6 +228,8 @@
 			children = (
 				BDDE768A28D649DC0054528F /* ImagePicker.swift */,
 				BD1968C728D8111F00E9DBD5 /* UploadImage.swift */,
+				BDD960ED28DA119100A31C0C /* StorageModels.swift */,
+				BDD960EF28DA36A300A31C0C /* KeyChain.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -427,6 +433,7 @@
 			files = (
 				BDDE6B2028D22E9200784B36 /* SearchView.swift in Sources */,
 				BDDE6B3328D4191400784B36 /* UserCell.swift in Sources */,
+				BDD960EE28DA119200A31C0C /* StorageModels.swift in Sources */,
 				BDDE6B1E28D22E7700784B36 /* FeedView.swift in Sources */,
 				BDD960D928D894A800A31C0C /* SessionManager.swift in Sources */,
 				BDD960DB28D894CC00A31C0C /* SignInViewModel.swift in Sources */,
@@ -445,6 +452,7 @@
 				BDDE768D28D6C9120054528F /* SignInView.swift in Sources */,
 				BDD960EC28D94E4C00A31C0C /* JSONDecoder+Extension.swift in Sources */,
 				BD67086E28D4C8FD00788821 /* ProfileHeaderView.swift in Sources */,
+				BDD960F028DA36A300A31C0C /* KeyChain.swift in Sources */,
 				BDDE6B2728D22EF300784B36 /* UploadPostView.swift in Sources */,
 				BDDE6B2328D22EAA00784B36 /* ProfileView.swift in Sources */,
 				BD1968B628D7BEDA00E9DBD5 /* SignUpView.swift in Sources */,

@@ -34,7 +34,7 @@ class SignUpViewModel {
                 
                 Firestore.firestore().collection("users").document(user.uid).setData(data) { _ in
                     print("Os dados do usuário foram salvos com sucesso!")
-                    SessionManager.shared.userSession = user
+                    SessionManager.shared.startSession(userSession: user)
                 }
             }
         }

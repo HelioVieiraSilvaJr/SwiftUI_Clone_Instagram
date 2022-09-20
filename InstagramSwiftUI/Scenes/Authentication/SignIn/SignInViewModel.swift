@@ -17,7 +17,7 @@ class SignInViewModel {
                 return
             }
             guard let user = result?.user else { return }
-            SessionManager.shared.userSession = user
+            SessionManager.shared.startSession(userSession: user)
             print("Usuário logado com sucesso!")
         }
     }
