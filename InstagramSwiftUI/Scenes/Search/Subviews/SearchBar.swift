@@ -11,6 +11,7 @@ struct SearchBar: View {
     @Binding var text: String
     @Binding var isEditing: Bool
     @FocusState var textFieldFocused: Bool
+    @ObservedObject var viewModel: SearchViewModel
     
     var body: some View {
         HStack {
@@ -29,6 +30,7 @@ struct SearchBar: View {
                 )
                 .onTapGesture {
                     isEditing = true
+                    viewModel.fetchUsers()
                 }
                 .focused($textFieldFocused)
             
@@ -51,6 +53,6 @@ struct SearchBar: View {
 
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar(text: .constant("Text"), isEditing: .constant(true))
+        SearchBar(text: .constant("Text"), isEditing: .constant(true), viewModel: SearchViewModel())
     }
 }
