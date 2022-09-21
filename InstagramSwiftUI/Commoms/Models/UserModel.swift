@@ -14,6 +14,7 @@ struct UserModel: Identifiable, Codable {
     let fullname: String
     let profileImageURL: String
     let uid: String
+    var isFollowed: Bool? = false
     
     func isCurrentUser() -> Bool {
         uid == SessionManager.shared.uid

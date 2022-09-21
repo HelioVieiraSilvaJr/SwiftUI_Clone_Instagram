@@ -9,12 +9,12 @@ import SwiftUI
 import Kingfisher
 
 struct ProfileHeaderView: View {
-    let user: UserModel
+    @ObservedObject var viewModel: ProfileViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                KFImage(URL(string: user.profileImageURL))
+                KFImage(URL(string: viewModel.user.profileImageURL))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 80, height: 80)
@@ -31,7 +31,7 @@ struct ProfileHeaderView: View {
                 .padding(.trailing, 32)
             }
             
-            Text(user.username)
+            Text(viewModel.user.username)
                 .font(.system(size: 15, weight: .semibold))
                 .padding([.leading, .top])
             
@@ -43,8 +43,7 @@ struct ProfileHeaderView: View {
             HStack {
                 Spacer()
                 
-                ProfileActionButtonView(isCurrentUser: user.isCurrentUser(),
-                                        isFollowed: false)
+                ProfileActionButtonView(viewModel: viewModel)
                 
                 Spacer()
             }
@@ -56,10 +55,10 @@ struct ProfileHeaderView: View {
 
 struct ProfileHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileHeaderView(user: UserModel(email: "",
-                                          username: "",
-                                          fullname: "",
-                                          profileImageURL: "",
-                                          uid: ""))
+        ProfileHeaderView(viewModel: ProfileViewModel(user: UserModel(email: "",
+                                                                      username: "",
+                                                                      fullname: "",
+                                                                      profileImageURL: "",
+                                                                      uid: "")))
     }
 }
