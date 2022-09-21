@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var sessionManager: SessionManager
+    @State var selectionIndex = 0
     
     var body: some View {
         Group {
@@ -16,7 +17,7 @@ struct ContentView: View {
                 SignInView()
             }
             else {
-                MainTabView()
+                MainTabView(selectedIndex: $selectionIndex)
             }
         }
     }
