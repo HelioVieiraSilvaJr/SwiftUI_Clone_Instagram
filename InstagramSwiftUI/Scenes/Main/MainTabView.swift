@@ -32,7 +32,7 @@ struct MainTabView: View {
                     }
                     .tag(1)
                 
-                UploadPostView()
+                UploadPostView(tabIndex: $selectedIndex)
                     .onTapGesture {
                         selectedIndex = 2
                     }

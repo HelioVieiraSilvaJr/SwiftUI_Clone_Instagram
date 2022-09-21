@@ -12,6 +12,7 @@ struct UploadPostView: View {
     @State var postImage: Image?
     @State var captionText = ""
     @State var imagePickerPresented = false
+    @Binding var tabIndex: Int
     @ObservedObject var viewModel = UploadPostViewModel()
     
     var body: some View {
@@ -49,27 +50,43 @@ struct UploadPostView: View {
                         .clipped()
                         .foregroundColor(Color.black)
                     
-                    TextField("Escreva seu comentário...", text: $captionText)
+                    CustomTextView(text: $captionText,
+                                   placeholder: "Escreva seu comentário...")
+                        .frame(height: 200)
                 }
                 .padding()
                 
-                Button {
-                    guard let selectedImage = selectedImage else { return }
-                    viewModel.createNewPost(caption: captionText,
-                                            image: selectedImage) {
+                HStack(spacing: 16) {
+                    Button {
                         captionText = ""
                         self.postImage = nil
+                    } label: {
+                        Text("Cancelar")
+                            .font(.system(size: 16, weight: .semibold))
+                            .frame(width: 172, height: 50)
+                            .background(Color.red)
+                            .cornerRadius(5)
+                            .foregroundColor(.white)
                     }
-                } label: {
-                    Text("Compartilhar")
-                        .font(.system(size: 16, weight: .semibold))
-                        .frame(width: 360, height: 50)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .padding()
                     
+                    Button {
+                        guard let selectedImage = selectedImage else { return }
+                        viewModel.createNewPost(caption: captionText,
+                                                image: selectedImage) {
+                            captionText = ""
+                            self.postImage = nil
+                            tabIndex = 0
+                        }
+                    } label: {
+                        Text("Compartilhar")
+                            .font(.system(size: 16, weight: .semibold))
+                            .frame(width: 172, height: 50)
+                            .background(Color.blue)
+                            .cornerRadius(5)
+                            .foregroundColor(.white)
+                    }
                 }
-
+                .padding()
             }
             
             Spacer()
@@ -80,6 +97,6 @@ struct UploadPostView: View {
 
 struct UploadPostView_Previews: PreviewProvider {
     static var previews: some View {
-        UploadPostView()
+        UploadPostView(tabIndex: .constant(0))
     }
 }
