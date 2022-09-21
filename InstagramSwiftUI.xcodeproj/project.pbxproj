@@ -22,6 +22,8 @@
 		BD67086E28D4C8FD00788821 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD67086D28D4C8FD00788821 /* ProfileHeaderView.swift */; };
 		BDD95E0728DABECD0078D85D /* UploadPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD95E0628DABECD0078D85D /* UploadPostViewModel.swift */; };
 		BDD95E0928DAEAC50078D85D /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD95E0828DAEAC50078D85D /* CustomTextView.swift */; };
+		BDD95E0B28DB52E70078D85D /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD95E0A28DB52E70078D85D /* PostModel.swift */; };
+		BDD95E0E28DB812C0078D85D /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD95E0D28DB812C0078D85D /* FeedViewModel.swift */; };
 		BDD960D928D894A800A31C0C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD960D828D894A800A31C0C /* SessionManager.swift */; };
 		BDD960DB28D894CC00A31C0C /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD960DA28D894CC00A31C0C /* SignInViewModel.swift */; };
 		BDD960DD28D8956B00A31C0C /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD960DC28D8956B00A31C0C /* SignUpViewModel.swift */; };
@@ -66,6 +68,8 @@
 		BD67086D28D4C8FD00788821 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		BDD95E0628DABECD0078D85D /* UploadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModel.swift; sourceTree = "<group>"; };
 		BDD95E0828DAEAC50078D85D /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		BDD95E0A28DB52E70078D85D /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		BDD95E0D28DB812C0078D85D /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		BDD960D828D894A800A31C0C /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		BDD960DA28D894CC00A31C0C /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		BDD960DC28D8956B00A31C0C /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -120,6 +124,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BDD95E0C28DB80AE0078D85D /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				BDDE6B2A28D3CA2C00784B36 /* FeedCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		BDD960D428D893C300A31C0C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				BDD960E328D8A2A000A31C0C /* UserModel.swift */,
+				BDD95E0A28DB52E70078D85D /* PostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -320,8 +333,9 @@
 		BDDE6B1328D22D1900784B36 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				BDD95E0C28DB80AE0078D85D /* Subviews */,
 				BDDE6B1D28D22E7700784B36 /* FeedView.swift */,
-				BDDE6B2A28D3CA2C00784B36 /* FeedCell.swift */,
+				BDD95E0D28DB812C0078D85D /* FeedViewModel.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -487,10 +501,12 @@
 				BDD960E428D8A2A000A31C0C /* UserModel.swift in Sources */,
 				BDDE6B1C28D22E3C00784B36 /* MainTabView.swift in Sources */,
 				BDD960F528DA5B0300A31C0C /* ProfileRepository.swift in Sources */,
+				BDD95E0B28DB52E70078D85D /* PostModel.swift in Sources */,
 				BDDE6B2D28D3DB6200784B36 /* SearchBar.swift in Sources */,
 				BDD960E228D8A24200A31C0C /* SearchViewModel.swift in Sources */,
 				BDDE6B2928D22F0900784B36 /* NotificationsView.swift in Sources */,
 				BDDE6B2B28D3CA2C00784B36 /* FeedCell.swift in Sources */,
+				BDD95E0E28DB812C0078D85D /* FeedViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +642,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -654,6 +671,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

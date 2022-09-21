@@ -9,12 +9,14 @@ import Foundation
 
 class ProfileViewModel: ObservableObject {
     @Published var user: UserModel
+    @Published var posts = [PostModel]()
     private let repository: ProfileRepository
    
     init(user: UserModel) {
         self.user = user
         self.repository = ProfileRepository()
         checkIfUserIsFollowed()
+        fetchPosts()
     }
     
     func setFollow() {
@@ -33,6 +35,12 @@ class ProfileViewModel: ObservableObject {
         guard !user.isCurrentUser() else { return }
         repository.isFollowed(uid: user.uid) { isFollowed in
             self.user.isFollowed = isFollowed
+        }
+    }
+    
+    func fetchPosts() {
+        repository.fetchPosts(uid: user.uid) { posts in
+            self.posts = posts
         }
     }
 }

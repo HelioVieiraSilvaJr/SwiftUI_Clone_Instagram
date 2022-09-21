@@ -11,10 +11,12 @@ class SearchViewModel: ObservableObject {
     
     // MARK: Properties
     @Published var users = [UserModel]()
+    @Published var posts = [PostModel]()
     var repository: SearchRepository = SearchRepository()
     
     init() {
         fetchUsers()
+        fetchPosts()
     }
     
     func fetchUsers() {
@@ -26,5 +28,11 @@ class SearchViewModel: ObservableObject {
     func filteringUsers(text: String) -> [UserModel] {
         users.filter({ $0.username.lowercased().contains(text.lowercased())
             || $0.fullname.lowercased().contains(text.lowercased()) })
+    }
+    
+    func fetchPosts() {
+        repository.fetchPosts { posts in
+            self.posts = posts
+        }
     }
 }

@@ -15,17 +15,15 @@ class UploadPostViewModel: ObservableObject {
         guard let currentUser = SessionManager.shared.currentUser else { return }
         
         UploadImage.send(image, type: .post) { imageURL in
-            let data: [String:Any] = [
-                                        "caption": caption,
-                                        "timestamp": Timestamp(date: Date()),
-                                        "likes": 0,
-                                        "imageUrl": imageURL,
-                                        "ownerUid": currentUser.uid,
-                                        "OwnerImageUrl": currentUser.profileImageURL,
-                                        "ownerUsername": currentUser.username
-                                    ]
+            let data = PostModel(caption: caption,
+                                 timestamp: Date(),
+                                 likes: 0,
+                                 imageUrl: imageURL,
+                                 ownerUid: currentUser.uid,
+                                 ownerImageUrl: currentUser.profileImageURL,
+                                 ownerUsername: currentUser.username)
             
-            Firestore.firestore().collection(COLLECTION_POSTS).addDocument(data: data) { _ in
+            Firestore.firestore().collection(COLLECTION_POSTS).addDocument(data: data.toJSON()) { _ in
                 completion()
             }
         }

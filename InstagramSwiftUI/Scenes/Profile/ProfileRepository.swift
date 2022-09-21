@@ -55,4 +55,17 @@ struct ProfileRepository {
             completion(flag)
         }
     }
+    
+    func fetchPosts(uid: String, didSuccess: @escaping (([PostModel]) -> Void)) {
+        Firestore.firestore().collection(COLLECTION_POSTS).whereField("ownerUid", isEqualTo: uid).getDocuments { snapshot, error in
+            if let error = error {
+                print("ERROR: Não foi possivel pegar coleção 'users' -> (\(error.localizedDescription).")
+                return
+            }
+            
+            guard let documents = snapshot?.documents else { return }
+            let posts = documents.compactMap({ JSONDecoder.decode(to: PostModel.self, from: $0.data()) })
+            didSuccess(posts)
+        }
+    }
 }
