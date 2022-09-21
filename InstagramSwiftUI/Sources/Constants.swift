@@ -7,3 +7,4 @@
 
 let COLLECTION_FOLLOWING = "following"
 let COLLECTION_FOLLOWERS = "followers"
+let COLLECTION_POSTS = "posts"

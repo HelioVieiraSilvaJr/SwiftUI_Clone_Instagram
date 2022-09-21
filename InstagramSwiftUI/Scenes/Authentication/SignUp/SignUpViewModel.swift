@@ -15,7 +15,7 @@ class SignUpViewModel {
                 image: UIImage,
                 username: String,
                 fullname: String) {
-        UploadImage.profile(image) { imageURL in
+        UploadImage.send(image, type: .profile) { imageURL in
             Auth.auth().createUser(withEmail: email, password: password) { result, error in
                 if let error = error {
                     print(error.localizedDescription)

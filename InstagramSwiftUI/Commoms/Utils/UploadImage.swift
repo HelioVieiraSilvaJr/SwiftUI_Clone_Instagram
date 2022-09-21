@@ -10,10 +10,30 @@ import FirebaseStorage
 
 class UploadImage {
     
-    static func profile(_ image: UIImage, completion: @escaping (String) -> Void) {
-        guard let imageData = image.jpegData(compressionQuality: 0.5) else { return }
-        let filename = NSUUID().uuidString
-        let ref = Storage.storage().reference(withPath: "/profile_images/\(filename)")
+    enum UploadType {
+        case profile, post
+        
+        var filePath: StorageReference {
+            let filename = NSUUID().uuidString
+            switch self {
+            case .profile:
+                return Storage.storage().reference(withPath: "/profile_images/\(filename)")
+            case .post:
+                return Storage.storage().reference(withPath: "/post_images/\(filename)")
+            }
+        }
+        
+        var compressionQuality: CGFloat {
+            switch self {
+            case .profile: return 0.5
+            case .post: return 0.7
+            }
+        }
+    }
+    
+    static func send(_ image: UIImage, type: UploadType, completion: @escaping (String) -> Void) {
+        guard let imageData = image.jpegData(compressionQuality: type.compressionQuality) else { return }
+        let ref = type.filePath
         
         ref.putData(imageData) { _, error in
             if let error = error {
