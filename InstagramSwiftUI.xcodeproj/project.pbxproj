@@ -26,6 +26,12 @@
 		BDD95E0E28DB812C0078D85D /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD95E0D28DB812C0078D85D /* FeedViewModel.swift */; };
 		BDD95E1028DBFD490078D85D /* FeedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD95E0F28DBFD490078D85D /* FeedCellViewModel.swift */; };
 		BDD95E1228DBFFCC0078D85D /* FeedRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD95E1128DBFFCC0078D85D /* FeedRepository.swift */; };
+		BDD95E1428DC11210078D85D /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD95E1328DC11210078D85D /* CommentsView.swift */; };
+		BDD95E1628DC112A0078D85D /* CommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD95E1528DC112A0078D85D /* CommentsCell.swift */; };
+		BDD95E1928DC142E0078D85D /* CustomInputText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD95E1828DC142E0078D85D /* CustomInputText.swift */; };
+		BDD95E1B28DC16640078D85D /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD95E1A28DC16630078D85D /* CommentsViewModel.swift */; };
+		BDD95E1D28DC17960078D85D /* CommentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD95E1C28DC17960078D85D /* CommentsRepository.swift */; };
+		BDD95E2028DC198F0078D85D /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD95E1F28DC198F0078D85D /* CommentModel.swift */; };
 		BDD960D928D894A800A31C0C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD960D828D894A800A31C0C /* SessionManager.swift */; };
 		BDD960DB28D894CC00A31C0C /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD960DA28D894CC00A31C0C /* SignInViewModel.swift */; };
 		BDD960DD28D8956B00A31C0C /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD960DC28D8956B00A31C0C /* SignUpViewModel.swift */; };
@@ -74,6 +80,12 @@
 		BDD95E0D28DB812C0078D85D /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		BDD95E0F28DBFD490078D85D /* FeedCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellViewModel.swift; sourceTree = "<group>"; };
 		BDD95E1128DBFFCC0078D85D /* FeedRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRepository.swift; sourceTree = "<group>"; };
+		BDD95E1328DC11210078D85D /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
+		BDD95E1528DC112A0078D85D /* CommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsCell.swift; sourceTree = "<group>"; };
+		BDD95E1828DC142E0078D85D /* CustomInputText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputText.swift; sourceTree = "<group>"; };
+		BDD95E1A28DC16630078D85D /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
+		BDD95E1C28DC17960078D85D /* CommentsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsRepository.swift; sourceTree = "<group>"; };
+		BDD95E1F28DC198F0078D85D /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		BDD960D828D894A800A31C0C /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		BDD960DA28D894CC00A31C0C /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		BDD960DC28D8956B00A31C0C /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -135,6 +147,22 @@
 				BDD95E0F28DBFD490078D85D /* FeedCellViewModel.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		BDD95E1728DC112D0078D85D /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				BDD95E1528DC112A0078D85D /* CommentsCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		BDD95E1E28DC19800078D85D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BDD95E1F28DC198F0078D85D /* CommentModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		BDD960D428D893C300A31C0C /* Sources */ = {
@@ -311,6 +339,11 @@
 		BDDE6B1028D22D0500784B36 /* Comments */ = {
 			isa = PBXGroup;
 			children = (
+				BDD95E1E28DC19800078D85D /* Models */,
+				BDD95E1728DC112D0078D85D /* Subviews */,
+				BDD95E1328DC11210078D85D /* CommentsView.swift */,
+				BDD95E1A28DC16630078D85D /* CommentsViewModel.swift */,
+				BDD95E1C28DC17960078D85D /* CommentsRepository.swift */,
 			);
 			path = Comments;
 			sourceTree = "<group>";
@@ -383,6 +416,7 @@
 				BDDE769028D6CFDE0054528F /* CustomTextField.swift */,
 				BDDE769228D6DFB80054528F /* CustomSecureField.swift */,
 				BDD95E0828DAEAC50078D85D /* CustomTextView.swift */,
+				BDD95E1828DC142E0078D85D /* CustomInputText.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -474,7 +508,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDD95E1B28DC16640078D85D /* CommentsViewModel.swift in Sources */,
 				BDDE6B2028D22E9200784B36 /* SearchView.swift in Sources */,
+				BDD95E2028DC198F0078D85D /* CommentModel.swift in Sources */,
 				BDDE6B3328D4191400784B36 /* UserCell.swift in Sources */,
 				BDD960EE28DA119200A31C0C /* StorageModels.swift in Sources */,
 				BDDE6B1E28D22E7700784B36 /* FeedView.swift in Sources */,
@@ -482,6 +518,7 @@
 				BDD960DB28D894CC00A31C0C /* SignInViewModel.swift in Sources */,
 				BDDE768B28D649DC0054528F /* ImagePicker.swift in Sources */,
 				BDD960E628D8A32500A31C0C /* SearchRepository.swift in Sources */,
+				BDD95E1928DC142E0078D85D /* CustomInputText.swift in Sources */,
 				BD1968C828D8111F00E9DBD5 /* UploadImage.swift in Sources */,
 				BDDE769128D6CFDE0054528F /* CustomTextField.swift in Sources */,
 				BD1A4A2E28D4D14400ED8647 /* ProfileActionButtonView.swift in Sources */,
@@ -494,7 +531,9 @@
 				BDDE6B0E28D22CEB00784B36 /* ContentView.swift in Sources */,
 				BDDE6B3528D4C20900784B36 /* NotificationCell.swift in Sources */,
 				BDD960F328DA530F00A31C0C /* ProfileViewModel.swift in Sources */,
+				BDD95E1428DC11210078D85D /* CommentsView.swift in Sources */,
 				BDD95E1228DBFFCC0078D85D /* FeedRepository.swift in Sources */,
+				BDD95E1628DC112A0078D85D /* CommentsCell.swift in Sources */,
 				BDDE768D28D6C9120054528F /* SignInView.swift in Sources */,
 				BDD960EC28D94E4C00A31C0C /* JSONDecoder+Extension.swift in Sources */,
 				BD67086E28D4C8FD00788821 /* ProfileHeaderView.swift in Sources */,
@@ -503,6 +542,7 @@
 				BDDE6B2728D22EF300784B36 /* UploadPostView.swift in Sources */,
 				BDD95E1028DBFD490078D85D /* FeedCellViewModel.swift in Sources */,
 				BDDE6B2328D22EAA00784B36 /* ProfileView.swift in Sources */,
+				BDD95E1D28DC17960078D85D /* CommentsRepository.swift in Sources */,
 				BDD960F728DA5B9D00A31C0C /* Constants.swift in Sources */,
 				BD1968B628D7BEDA00E9DBD5 /* SignUpView.swift in Sources */,
 				BDDE6B3128D4190B00784B36 /* UserListView.swift in Sources */,
