@@ -14,6 +14,8 @@ struct UserModel: Identifiable, Codable {
     let fullname: String
     let profileImageURL: String
     let uid: String
+    
+    /// Just notifier rule
     var isFollowed: Bool? = false
     
     func isCurrentUser() -> Bool {

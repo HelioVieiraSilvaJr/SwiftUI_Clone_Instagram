@@ -9,42 +9,41 @@ import SwiftUI
 import Kingfisher
 
 struct FeedCell: View {
-    let post: PostModel
+    @ObservedObject var viewModel: FeedCellViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
             //User info
             HStack {
-                KFImage(URL(string: post.ownerImageUrl))
+                KFImage(URL(string: viewModel.post.ownerImageUrl))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 36, height: 36)
                     .clipped()
                     .cornerRadius(18)
                 
-                KFImage(URL(string: ""))
-                    .resizable()
-                
-                Text(post.ownerUsername)
+                Text(viewModel.post.ownerUsername)
                     .font(.system(size: 14, weight: .semibold))
             }
             .padding([.leading, .bottom], 8)
             
             // post image
-            KFImage(URL(string: post.imageUrl))
+            KFImage(URL(string: viewModel.post.imageUrl))
                 .resizable()
                 .scaledToFill()
-                .frame(maxHeight: 440)
+                .frame(maxHeight: 360)
                 .clipped()
             
             // action buttons
             HStack (spacing: 16) {
-                Button(action: {}, label: {
-                    Image(systemName: "heart")
+                Button(action: {
+                    viewModel.toggleLike()
+                }, label: {
+                    Image(systemName: viewModel.isLiked ? "heart.fill" : "heart")
                         .resizable()
                         .scaledToFill()
                         .frame(width: 20, height: 20)
-                        .font(.system(size: 20))
+                        .foregroundColor(viewModel.isLiked ? .red : .black)
                         .padding(4)
                 })
                 
@@ -71,14 +70,14 @@ struct FeedCell: View {
             
             // caption
             
-            Text("\(post.likes) likes")
+            Text(viewModel.getLikesDescription())
                 .font(.system(size: 14, weight: .semibold))
                 .padding(.leading, 8)
                 .padding(.bottom, 2)
             
             HStack {
-                Text(post.ownerUsername)
-                    .font(.system(size: 14, weight: .semibold)) + Text(" \(post.caption)")
+                Text(viewModel.post.ownerUsername)
+                    .font(.system(size: 14, weight: .semibold)) + Text(" \(viewModel.post.caption)")
                     .font(.system(size: 15))
             }
             .padding(.horizontal, 8)
@@ -94,6 +93,12 @@ struct FeedCell: View {
 
 struct FeedCell_Previews: PreviewProvider {
     static var previews: some View {
-        FeedCell(post: PostModel(caption: "", timestamp: Date(), likes: 0, imageUrl: "", ownerUid: "", ownerImageUrl: "", ownerUsername: ""))
+        FeedCell(viewModel: FeedCellViewModel(post: PostModel(caption: "",
+                                                              timestamp: Date(),
+                                                              likes: 0,
+                                                              imageUrl: "",
+                                                              ownerUid: "",
+                                                              ownerImageUrl: "",
+                                                              ownerUsername: "")))
     }
 }

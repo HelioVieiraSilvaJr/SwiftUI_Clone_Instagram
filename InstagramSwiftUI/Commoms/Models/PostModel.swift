@@ -8,12 +8,16 @@
 import Foundation
 
 struct PostModel: Identifiable, Codable {
-    let id = UUID()
+    var id: String?
     let caption: String
-    let timestamp: Date?
+    let timestamp: Date
     let likes: Int
     let imageUrl: String
     let ownerUid: String
     let ownerImageUrl: String
     let ownerUsername: String
+    
+    /// Just notifier rule
+    var isLiked: Bool? = false
+    var listLikes: [String]? = []
 }
