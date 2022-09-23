@@ -20,6 +20,9 @@ class CommentsViewModel: ObservableObject {
     func send(comment: String) {
         repository.send(comment: comment, fromPost: post) {
             self.fetchComments()
+            NotificationsManager.shared.sendNotification(toUid: self.post.ownerUid,
+                                                         type: .comment,
+                                                         post: self.post)
         }
     }
     

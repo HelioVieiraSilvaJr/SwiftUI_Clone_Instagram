@@ -31,7 +31,7 @@ struct FeedCell: View {
             KFImage(URL(string: viewModel.post.imageUrl))
                 .resizable()
                 .scaledToFill()
-                .frame(maxHeight: 360)
+                .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 360)
                 .clipped()
             
             // action buttons
@@ -90,6 +90,8 @@ struct FeedCell: View {
                 .foregroundColor(.gray)
                 .padding(.leading, 8)
                 .padding(.top, -2)
+            
+            Spacer()
         }
     }
 }

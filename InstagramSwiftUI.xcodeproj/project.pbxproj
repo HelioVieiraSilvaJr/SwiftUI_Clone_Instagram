@@ -19,6 +19,11 @@
 		BD1968CD28D8139600E9DBD5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BD1968CC28D8139600E9DBD5 /* FirebaseStorage */; };
 		BD1A4A2C28D4CD7A00ED8647 /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A4A2B28D4CD7A00ED8647 /* UserStatView.swift */; };
 		BD1A4A2E28D4D14400ED8647 /* ProfileActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A4A2D28D4D14300ED8647 /* ProfileActionButtonView.swift */; };
+		BD31551828DCF75300A0C715 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD31551728DCF75300A0C715 /* NotificationModel.swift */; };
+		BD31551A28DD088200A0C715 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD31551928DD088200A0C715 /* NotificationsManager.swift */; };
+		BD31551C28DD502800A0C715 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD31551B28DD502800A0C715 /* NotificationsViewModel.swift */; };
+		BD31551F28DD505000A0C715 /* NotificationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD31551E28DD505000A0C715 /* NotificationsRepository.swift */; };
+		BD31552128DD50EF00A0C715 /* NotificationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD31552028DD50EF00A0C715 /* NotificationCellViewModel.swift */; };
 		BD67086E28D4C8FD00788821 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD67086D28D4C8FD00788821 /* ProfileHeaderView.swift */; };
 		BDD95E0728DABECD0078D85D /* UploadPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD95E0628DABECD0078D85D /* UploadPostViewModel.swift */; };
 		BDD95E0928DAEAC50078D85D /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD95E0828DAEAC50078D85D /* CustomTextView.swift */; };
@@ -73,6 +78,11 @@
 		BD1968C728D8111F00E9DBD5 /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
 		BD1A4A2B28D4CD7A00ED8647 /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
 		BD1A4A2D28D4D14300ED8647 /* ProfileActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionButtonView.swift; sourceTree = "<group>"; };
+		BD31551728DCF75300A0C715 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		BD31551928DD088200A0C715 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
+		BD31551B28DD502800A0C715 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
+		BD31551E28DD505000A0C715 /* NotificationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRepository.swift; sourceTree = "<group>"; };
+		BD31552028DD50EF00A0C715 /* NotificationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCellViewModel.swift; sourceTree = "<group>"; };
 		BD67086D28D4C8FD00788821 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		BDD95E0628DABECD0078D85D /* UploadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModel.swift; sourceTree = "<group>"; };
 		BDD95E0828DAEAC50078D85D /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
@@ -140,6 +150,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD31551D28DD502C00A0C715 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				BDDE6B3428D4C20800784B36 /* NotificationCell.swift */,
+				BD31552028DD50EF00A0C715 /* NotificationCellViewModel.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		BDD95E0C28DB80AE0078D85D /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +190,7 @@
 				BDDE6AF928D22B9C00784B36 /* InstagramSwiftUIApp.swift */,
 				BDD960D828D894A800A31C0C /* SessionManager.swift */,
 				BDD960F628DA5B9D00A31C0C /* Constants.swift */,
+				BD31551928DD088200A0C715 /* NotificationsManager.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -286,6 +306,7 @@
 			children = (
 				BDD960E328D8A2A000A31C0C /* UserModel.swift */,
 				BDD95E0A28DB52E70078D85D /* PostModel.swift */,
+				BD31551728DCF75300A0C715 /* NotificationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -362,8 +383,10 @@
 		BDDE6B1228D22D1200784B36 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				BD31551D28DD502C00A0C715 /* Subviews */,
 				BDDE6B2828D22F0900784B36 /* NotificationsView.swift */,
-				BDDE6B3428D4C20800784B36 /* NotificationCell.swift */,
+				BD31551B28DD502800A0C715 /* NotificationsViewModel.swift */,
+				BD31551E28DD505000A0C715 /* NotificationsRepository.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -524,6 +547,7 @@
 				BD1A4A2E28D4D14400ED8647 /* ProfileActionButtonView.swift in Sources */,
 				BDD95E0728DABECD0078D85D /* UploadPostViewModel.swift in Sources */,
 				BD1A4A2C28D4CD7A00ED8647 /* UserStatView.swift in Sources */,
+				BD31551F28DD505000A0C715 /* NotificationsRepository.swift in Sources */,
 				BDDE769328D6DFB80054528F /* CustomSecureField.swift in Sources */,
 				BDDE6B2F28D4179700784B36 /* PostGridView.swift in Sources */,
 				BDDE6AFA28D22B9C00784B36 /* InstagramSwiftUIApp.swift in Sources */,
@@ -536,6 +560,7 @@
 				BDD95E1628DC112A0078D85D /* CommentsCell.swift in Sources */,
 				BDDE768D28D6C9120054528F /* SignInView.swift in Sources */,
 				BDD960EC28D94E4C00A31C0C /* JSONDecoder+Extension.swift in Sources */,
+				BD31552128DD50EF00A0C715 /* NotificationCellViewModel.swift in Sources */,
 				BD67086E28D4C8FD00788821 /* ProfileHeaderView.swift in Sources */,
 				BDD95E0928DAEAC50078D85D /* CustomTextView.swift in Sources */,
 				BDD960F028DA36A300A31C0C /* KeyChain.swift in Sources */,
@@ -543,6 +568,7 @@
 				BDD95E1028DBFD490078D85D /* FeedCellViewModel.swift in Sources */,
 				BDDE6B2328D22EAA00784B36 /* ProfileView.swift in Sources */,
 				BDD95E1D28DC17960078D85D /* CommentsRepository.swift in Sources */,
+				BD31551C28DD502800A0C715 /* NotificationsViewModel.swift in Sources */,
 				BDD960F728DA5B9D00A31C0C /* Constants.swift in Sources */,
 				BD1968B628D7BEDA00E9DBD5 /* SignUpView.swift in Sources */,
 				BDDE6B3128D4190B00784B36 /* UserListView.swift in Sources */,
@@ -550,9 +576,11 @@
 				BDDE6B1C28D22E3C00784B36 /* MainTabView.swift in Sources */,
 				BDD960F528DA5B0300A31C0C /* ProfileRepository.swift in Sources */,
 				BDD95E0B28DB52E70078D85D /* PostModel.swift in Sources */,
+				BD31551828DCF75300A0C715 /* NotificationModel.swift in Sources */,
 				BDDE6B2D28D3DB6200784B36 /* SearchBar.swift in Sources */,
 				BDD960E228D8A24200A31C0C /* SearchViewModel.swift in Sources */,
 				BDDE6B2928D22F0900784B36 /* NotificationsView.swift in Sources */,
+				BD31551A28DD088200A0C715 /* NotificationsManager.swift in Sources */,
 				BDDE6B2B28D3CA2C00784B36 /* FeedCell.swift in Sources */,
 				BDD95E0E28DB812C0078D85D /* FeedViewModel.swift in Sources */,
 			);

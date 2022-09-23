@@ -27,6 +27,9 @@ class FeedCellViewModel: ObservableObject {
         else {
             repository.like(post: post) {
                 self.fetchListLikes()
+                NotificationsManager.shared.sendNotification(toUid: self.post.ownerUid,
+                                                             type: .like,
+                                                             post: self.post)
             }
         }
     }

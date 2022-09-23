@@ -22,6 +22,9 @@ class ProfileViewModel: ObservableObject {
     func setFollow() {
         repository.follow(uid: user.uid) { _ in
             self.user.isFollowed = true
+            NotificationsManager.shared.sendNotification(toUid: self.user.uid,
+                                                         type: .follow,
+                                                         post: nil)
         }
     }
     

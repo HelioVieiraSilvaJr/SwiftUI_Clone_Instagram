@@ -18,7 +18,6 @@ class SessionManager: ObservableObject {
             StorageModels.set(currentUser, key: "currentUser")
         }
     }
-    
     var uid: String? {
         Auth.auth().currentUser?.uid
     }
@@ -36,12 +35,14 @@ class SessionManager: ObservableObject {
     func startSession(userSession: FirebaseAuth.User) {
         self.userSession = userSession
         fetchUser()
+        NotificationsManager.shared.fetchNotifications()
     }
     
     func logout() {
         self.userSession = nil
         self.currentUser = nil
         try? Auth.auth().signOut()
+        NotificationsManager.shared.clear()
     }
     
     // MARK: Private Methods
@@ -49,7 +50,7 @@ class SessionManager: ObservableObject {
         guard let uid = SessionManager.shared.uid else { return }
         Firestore.firestore().collection("users").document(uid).getDocument { snapshot, error in
             if let error = error {
-                debugPrint("ERROR: Não foi possivel recuperar Usuário.")
+                debugPrint("ERROR: Não foi possivel recuperar Usuário. (\(error.localizedDescription)")
                 return
             }
             
@@ -58,6 +59,4 @@ class SessionManager: ObservableObject {
             self.currentUser = user
         }
     }
-    
-    
 }
