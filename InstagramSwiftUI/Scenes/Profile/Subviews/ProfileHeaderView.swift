@@ -24,9 +24,9 @@ struct ProfileHeaderView: View {
                 Spacer()
                 
                 HStack(spacing: 16) {
-                    UserStatView(value: 10, title: "Postagens")
-                    UserStatView(value: 30, title: "Seguidores")
-                    UserStatView(value: 22, title: "Seguindo")
+                    UserStatView(value: viewModel.user.stats?.posts ?? 0, title: "Postagens")
+                    UserStatView(value: viewModel.user.stats?.followers ?? 0, title: "Seguidores")
+                    UserStatView(value: viewModel.user.stats?.followings ?? 0, title: "Seguindo")
                 }
                 .padding(.trailing, 32)
             }
@@ -35,7 +35,7 @@ struct ProfileHeaderView: View {
                 .font(.system(size: 15, weight: .semibold))
                 .padding([.leading, .top])
             
-            Text("Gotham's Dark Knight || Billionaire")
+            Text((viewModel.user.bio ?? ""))
                 .font(.system(size: 15))
                 .padding(.leading)
                 .padding(.top, 1)
@@ -43,22 +43,14 @@ struct ProfileHeaderView: View {
             HStack {
                 Spacer()
                 
-                ProfileActionButtonView(viewModel: viewModel)
+                ProfileActionButtonView(viewModel: viewModel) {
+                    viewModel.updateUser()
+                }
                 
                 Spacer()
             }
             .padding(.top)
 
         }
-    }
-}
-
-struct ProfileHeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileHeaderView(viewModel: ProfileViewModel(user: UserModel(email: "",
-                                                                      username: "",
-                                                                      fullname: "",
-                                                                      profileImageURL: "",
-                                                                      uid: "")))
     }
 }

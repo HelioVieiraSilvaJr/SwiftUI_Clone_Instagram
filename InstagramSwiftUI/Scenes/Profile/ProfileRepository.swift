@@ -68,4 +68,36 @@ struct ProfileRepository {
             didSuccess(posts)
         }
     }
+    
+    func updateUser(completion: @escaping (UserModel) -> Void) {
+        guard let currenteUser = SessionManager.shared.currentUser else { return }
+        Firestore.firestore().collection(COLLECTION_USERS).document(currenteUser.uid).getDocument { snapshot, _ in
+            
+            guard let data = snapshot?.data(),
+                  let user = JSONDecoder.decode(to: UserModel.self, from: data) else { return }
+            
+            completion(user)
+        }
+    }
+    
+    func fetchStats(uid: String, completion: @escaping (UserModel.Stats) -> Void) {
+        let query = Firestore.firestore().collection(COLLECTION_USERS).document(uid)
+        
+        Firestore.firestore().collection(COLLECTION_POSTS)
+            .whereField("ownerUid", isEqualTo: uid)
+            .getDocuments { snapshot, _ in
+                let posts = snapshot?.documents.count ?? 0
+                
+            query.collection(COLLECTION_USER_FOLLOWERS).getDocuments { snapshot, _ in
+                    let followers = snapshot?.documents.count ?? 0
+                    
+                query.collection(COLLECTION_USER_FOLLOWINGS).getDocuments { snapshot, _ in
+                        let followings = snapshot?.documents.count ?? 0
+                        
+                    let stats = UserModel.Stats(followers: followers, followings: followings, posts: posts)
+                    completion(stats)
+                }
+            }
+        }
+    }
 }

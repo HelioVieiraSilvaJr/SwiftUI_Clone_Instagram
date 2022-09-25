@@ -17,6 +17,7 @@ class ProfileViewModel: ObservableObject {
         self.repository = ProfileRepository()
         checkIfUserIsFollowed()
         fetchPosts()
+        fetchStats()
     }
     
     func setFollow() {
@@ -44,6 +45,18 @@ class ProfileViewModel: ObservableObject {
     func fetchPosts() {
         repository.fetchPosts(uid: user.uid) { posts in
             self.posts = posts
+        }
+    }
+    
+    func updateUser() {
+        repository.updateUser { user in
+            self.user = user
+        }
+    }
+    
+    func fetchStats() {
+        repository.fetchStats(uid: user.uid) { stats in
+            self.user.stats = stats
         }
     }
 }

@@ -72,6 +72,8 @@
 		BDDE769128D6CFDE0054528F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE769028D6CFDE0054528F /* CustomTextField.swift */; };
 		BDDE769328D6DFB80054528F /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE769228D6DFB80054528F /* CustomSecureField.swift */; };
 		BDEB9D3E28DFFBC70071993D /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB9D3D28DFFBC70071993D /* LazyView.swift */; };
+		BDEB9D4128E0EAE90071993D /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB9D4028E0EAE90071993D /* EditProfileView.swift */; };
+		BDEB9D4328E0EE720071993D /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB9D4228E0EE720071993D /* EditProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +135,8 @@
 		BDDE769028D6CFDE0054528F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		BDDE769228D6DFB80054528F /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		BDEB9D3D28DFFBC70071993D /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
+		BDEB9D4028E0EAE90071993D /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		BDEB9D4228E0EE720071993D /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +340,7 @@
 				BDDE6B1328D22D1900784B36 /* Feed */,
 				BDDE6B1028D22D0500784B36 /* Comments */,
 				BDDE6B0F28D22D0100784B36 /* Profile */,
+				BDEB9D3F28E0EAD90071993D /* EditProfile */,
 				BDDE6B1228D22D1200784B36 /* Notifications */,
 				BDDE6B1428D22D1D00784B36 /* UploadPost */,
 				BDDE6B1128D22D0B00784B36 /* Search */,
@@ -450,6 +455,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		BDEB9D3F28E0EAD90071993D /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				BDEB9D4028E0EAE90071993D /* EditProfileView.swift */,
+				BDEB9D4228E0EE720071993D /* EditProfileViewModel.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -562,12 +576,14 @@
 				BDDE6AFA28D22B9C00784B36 /* InstagramSwiftUIApp.swift in Sources */,
 				BDD960DD28D8956B00A31C0C /* SignUpViewModel.swift in Sources */,
 				BDDE6B0E28D22CEB00784B36 /* ContentView.swift in Sources */,
+				BDEB9D4128E0EAE90071993D /* EditProfileView.swift in Sources */,
 				BDDE6B3528D4C20900784B36 /* NotificationCell.swift in Sources */,
 				BDD960F328DA530F00A31C0C /* ProfileViewModel.swift in Sources */,
 				BDD95E1428DC11210078D85D /* CommentsView.swift in Sources */,
 				BDD95E1228DBFFCC0078D85D /* FeedRepository.swift in Sources */,
 				BDD95E1628DC112A0078D85D /* CommentsCell.swift in Sources */,
 				BDDE768D28D6C9120054528F /* SignInView.swift in Sources */,
+				BDEB9D4328E0EE720071993D /* EditProfileViewModel.swift in Sources */,
 				BDD960EC28D94E4C00A31C0C /* JSONDecoder+Extension.swift in Sources */,
 				BD31552128DD50EF00A0C715 /* NotificationCellViewModel.swift in Sources */,
 				BD67086E28D4C8FD00788821 /* ProfileHeaderView.swift in Sources */,
