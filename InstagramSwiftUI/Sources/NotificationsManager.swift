@@ -26,6 +26,7 @@ class NotificationsManager: ObservableObject {
                           post: PostModel?) {
         
         guard let currentUser = SessionManager.shared.currentUser else { return }
+        guard uid != currentUser.uid else { return }
         
         let data = NotificationModel(timestamp: Date(),
                                      username: currentUser.username,

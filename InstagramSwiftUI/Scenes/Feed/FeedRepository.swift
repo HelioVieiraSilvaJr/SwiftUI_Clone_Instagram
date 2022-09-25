@@ -11,7 +11,7 @@ import Firebase
 struct FeedRepository {
     
     func fetchPosts(completion: @escaping ([PostModel]) -> Void) {
-        Firestore.firestore().collection(COLLECTION_POSTS).getDocuments { snapshot, error in
+        Firestore.firestore().collection(COLLECTION_POSTS).order(by: "timestamp", descending: true).getDocuments { snapshot, error in
             if let error = error {
                 print("ERROR: Não foi possivel recuperar os Posts do usuário. (\(error.localizedDescription)")
                 return

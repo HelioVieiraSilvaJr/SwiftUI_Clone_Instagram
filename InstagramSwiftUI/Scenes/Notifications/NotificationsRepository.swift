@@ -35,7 +35,7 @@ struct NotificationsRepository {
         }
     }
     
-    func getOwnerUser(uid: String, completion: @escaping (UserModel) -> Void) {
+    func getNotificationUser(uid: String, completion: @escaping (UserModel) -> Void) {
         Firestore.firestore().collection(COLLECTION_USERS).document(uid).getDocument { snapshot, _ in
             guard ((snapshot?.exists) != nil),
                   let data = snapshot?.data(),

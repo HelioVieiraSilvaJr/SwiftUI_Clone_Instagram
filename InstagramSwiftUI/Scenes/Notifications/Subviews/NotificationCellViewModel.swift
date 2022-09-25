@@ -36,7 +36,7 @@ class NotificationCellViewModel: ObservableObject {
     }
     
     func getNotificationUser() {
-        repository.getOwnerUser(uid: notification.uid) { user in
+        repository.getNotificationUser(uid: notification.uid) { user in
             self.user = user
         }
     }

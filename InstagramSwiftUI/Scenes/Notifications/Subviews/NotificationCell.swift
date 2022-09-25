@@ -25,6 +25,9 @@ struct NotificationCell: View {
                         .font(.system(size: 14, weight: .semibold))
                     + Text(" \(viewModel.notification.type.notificationMessage)")
                             .font(.system(size: 14))
+                    + Text(" \(viewModel.notification.timestamp.timeAgo)")
+                        .foregroundColor(.gray)
+                        .font(.system(size: 12))
                 }
             }
             

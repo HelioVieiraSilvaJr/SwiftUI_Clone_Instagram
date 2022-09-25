@@ -28,12 +28,23 @@ struct CommentsRepository {
     
     func fetchComments(post: PostModel, completion: @escaping ([CommentModel]) -> Void) {
         guard let postId = post.id else { return }
-        Firestore.firestore().collection(COLLECTION_POSTS).document(postId).collection(COLLECTION_POST_COMMENTS)
+        Firestore.firestore().collection(COLLECTION_POSTS).document(postId)
+            .collection(COLLECTION_POST_COMMENTS)
+            .order(by: "timestamp", descending: true)
             .getDocuments { snapshot, _ in
             
                 guard let documents = snapshot?.documents else { return }
                 let comments: [CommentModel] = documents.compactMap({ JSONDecoder.decode(to: CommentModel.self, from: $0.data()) })
                 completion(comments)
+        }
+    }
+    
+    func getNotificationUser(uid: String, completion: @escaping (UserModel) -> Void) {
+        Firestore.firestore().collection(COLLECTION_USERS).document(uid).getDocument { snapshot, _ in
+            guard ((snapshot?.exists) != nil),
+                  let data = snapshot?.data(),
+                  let user = JSONDecoder.decode(to: UserModel.self, from: data) else { return }
+            completion(user)
         }
     }
 }
